@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhxnc4m8upecc"]
+
+[ext_resource type="Texture2D" uid="uid://5wufcypihcaa" path="res://assets/sprites/world_tileset.png" id="1_jq5hw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br7ro"]
+size = Vector2(240, 6)
+
+[node name="PlataformaGiradura" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-96, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(-16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(96, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D5"]
+position = Vector2(-16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D5"]
+position = Vector2(16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-48, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(-16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(48, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(-16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D3"]
+position = Vector2(16, 0)
+texture = ExtResource("1_jq5hw")
+region_enabled = true
+region_rect = Rect2(160.052, -0.460417, 15.9454, 10.5537)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_br7ro")

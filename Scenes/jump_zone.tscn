@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://01w4ug85ojqv"]
+
+[node name="JumpZone" type="Area2D"]
