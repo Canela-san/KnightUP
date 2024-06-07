@@ -1,0 +1,9 @@
+AudioStreamPlayer2D
+Button
+MarginContainer
+VBoxContainer
+Label
+ColorRect
+Node
+StaticBody2D
+CollisionShape2D

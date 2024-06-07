@@ -4,8 +4,9 @@ extends Area2D
 
 func _on_body_entered(body):
 	Engine.time_scale = 0.5
+	body.get_node("AnimatedSprite2D").play("death")
 	body.get_node("CollisionShape2D").queue_free()
-	body.get_node("AudioStreamPlayer2D").play()
+	#body.get_node("AudioStreamPlayer2D").play()
 	timer.start()
 	
 func _on_timer_timeout():

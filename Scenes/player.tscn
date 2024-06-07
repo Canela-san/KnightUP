@@ -1,8 +1,24 @@
-[gd_scene load_steps=27 format=3 uid="uid://n4gc23ecslhk"]
+[gd_scene load_steps=31 format=3 uid="uid://n4gc23ecslhk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_lowoy"]
 [ext_resource type="Texture2D" uid="uid://qa5n4t27af8j" path="res://assets/sprites/knight.png" id="1_sccve"]
 [ext_resource type="AudioStream" uid="uid://drrl7pnmsy7fh" path="res://assets/music/gemido-whatsapp.mp3" id="3_63egc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78yhj"]
+atlas = ExtResource("1_sccve")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6cpm"]
+atlas = ExtResource("1_sccve")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rvlm"]
+atlas = ExtResource("1_sccve")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mdg2"]
+atlas = ExtResource("1_sccve")
+region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7bjy"]
 atlas = ExtResource("1_sccve")
@@ -90,6 +106,23 @@ region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8xlyd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78yhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6cpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rvlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mdg2")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g7bjy")
@@ -180,7 +213,7 @@ script = ExtResource("1_lowoy")
 z_index = 5
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_8xlyd")
-animation = &"jump"
+animation = &"death"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

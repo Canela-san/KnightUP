@@ -1,0 +1,14 @@
+res://Scenes/menu.tscn
+res://Scripts/menu.gd
+res://Scenes/game_manager.tscn
+res://Scripts/game_manager.gd
+res://Scenes/lvl1.tscn
+res://Scenes/music2.tscn
+res://Scenes/slime.tscn
+res://Scenes/killzone.tscn
+res://Scenes/player.tscn
+res://Scripts/killzone.gd
+res://Scenes/lvl2.tscn
+res://Scripts/player.gd
+res://Scripts/level_maneger.gd
+res://Scripts/lvl1.gd
