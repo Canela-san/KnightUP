@@ -1,9 +1,11 @@
+MultiplayerSynchronizer
+MultiplayerSpawner
 AudioStreamPlayer2D
+Node
 Button
 MarginContainer
 VBoxContainer
 Label
 ColorRect
-Node
 StaticBody2D
 CollisionShape2D

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcdk24mlqqnur"]
+
+[ext_resource type="AudioStream" uid="uid://b0vtxf8w7ugts" path="res://assets/music/Triângulo dançando toque da Motorola (128kbps).mp3" id="1_rq1lo"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rq1lo")

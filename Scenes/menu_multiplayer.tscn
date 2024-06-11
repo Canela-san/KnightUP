@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf0ykbdi8onnt"]
+[gd_scene load_steps=7 format=3 uid="uid://cleu24ad0vyer"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_fr54h"]
+[ext_resource type="Script" path="res://Scripts/menu_multiplayer.gd" id="1_cetal"]
 
 [sub_resource type="SystemFont" id="SystemFont_22y4j"]
 font_names = PackedStringArray("ComicShannsMono Nerd Font")
@@ -31,8 +31,8 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="Menu" type="Node2D"]
-script = ExtResource("1_fr54h")
+[node name="Multiplayer" type="Node2D"]
+script = ExtResource("1_cetal")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
@@ -70,7 +70,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+[node name="Connect" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("SystemFont_y4db1")
@@ -78,24 +78,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_jcucj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mkjjp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
-text = "Start"
-
-[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
-
-[node name="Multiplayer" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
-layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = SubResource("SystemFont_y4db1")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_jcucj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mkjjp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
-text = "Multiplayer
-"
+text = "Join"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -103,7 +86,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="Host" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("SystemFont_y4db1")
@@ -111,8 +94,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_jcucj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mkjjp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
-text = "Options
-"
+text = "Host"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -120,7 +102,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("SystemFont_y4db1")
@@ -128,9 +110,8 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_jcucj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mkjjp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
-text = "Quit"
+text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/Multiplayer" to="." method="_on_multiplayer_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Connect" to="." method="_on_connect_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Back" to="." method="_on_back_pressed"]

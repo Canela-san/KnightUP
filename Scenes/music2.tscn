@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmodsvfbrvpf7"]
 
-[ext_resource type="AudioStream" uid="uid://2lo631vusn3b" path="res://assets/music/GEMIDAO DO WHATS APP MUSICA ELETRONICA (128kbps).mp3" id="1_jpafl"]
+[ext_resource type="AudioStream" uid="uid://q7fg83mkaarw" path="res://assets/music/time_for_adventure.mp3" id="1_awsji"]
 
 [node name="Music" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_jpafl")
+stream = ExtResource("1_awsji")
+volume_db = -4.667
 autoplay = true

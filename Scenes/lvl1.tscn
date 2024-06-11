@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dameq1u5kkjrg"]
+[gd_scene load_steps=47 format=3 uid="uid://dameq1u5kkjrg"]
 
 [ext_resource type="Texture2D" uid="uid://5wufcypihcaa" path="res://assets/sprites/world_tileset.png" id="1_0wu8r"]
 [ext_resource type="Script" path="res://Scripts/lvl1.gd" id="1_n4ve4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bkvtiuewy2yjl" path="res://Scenes/plataforma_giradura.tscn" id="6_vmr2b"]
 [ext_resource type="PackedScene" uid="uid://bhxnc4m8upecc" path="res://Scenes/plataforma_giradura_gigante.tscn" id="7_55b6y"]
 [ext_resource type="PackedScene" uid="uid://c45hm3bp6ucmh" path="res://Scenes/slime.tscn" id="8_ucyqt"]
+[ext_resource type="PackedScene" uid="uid://gxtrikf6p1ip" path="res://Scenes/slime_roxo.tscn" id="11_8fxt3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awkj5"]
 texture = ExtResource("1_0wu8r")
@@ -803,6 +804,7 @@ _data = {
 
 [node name="lvl1" type="Node2D"]
 script = ExtResource("1_n4ve4")
+player_scene = ExtResource("2_dmoe3")
 
 [node name="level_maneger" type="Node" parent="."]
 unique_name_in_owner = true
@@ -1309,7 +1311,7 @@ autoplay = "move"
 [node name="Slime Verde" type="Node" parent="Enemys/Slimes"]
 
 [node name="Slime" parent="Enemys/Slimes/Slime Verde" instance=ExtResource("8_ucyqt")]
-position = Vector2(137, -28)
+position = Vector2(121, -28)
 
 [node name="Slime2" parent="Enemys/Slimes/Slime Verde" instance=ExtResource("8_ucyqt")]
 position = Vector2(537, -60)
@@ -1362,6 +1364,11 @@ position = Vector2(90, -1580)
 [node name="Slime18" parent="Enemys/Slimes/Slime Verde" instance=ExtResource("8_ucyqt")]
 position = Vector2(329, -1516)
 
+[node name="Slime Roxo" type="Node" parent="Enemys/Slimes"]
+
+[node name="Slime" parent="Enemys/Slimes/Slime Roxo" instance=ExtResource("11_8fxt3")]
+position = Vector2(377, -364)
+
 [node name="World Barrier" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="World Barrier"]
@@ -1378,5 +1385,10 @@ position = Vector2(1170, 72)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_hdipa")
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scenes/player.tscn")
+spawn_path = NodePath("..")
+
 [connection signal="CoinPicked" from="level_maneger" to="." method="_on_level_maneger_coin_picked"]
 [connection signal="Reset" from="level_maneger" to="." method="_on_level_maneger_reset"]
+[connection signal="death" from="killzone" to="." method="_on_killzone_death"]

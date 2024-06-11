@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717731067
+::res://::1718130413
 default_bus_layout.tres::AudioBusLayout::5301523656855163530::1717642589::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1717642589::0::1::::<><>::
 icon.svg::CompressedTexture2D::4421273870042003761::1717642589::1717644122::1::::<><>::
@@ -7,11 +7,11 @@ icon.svg::CompressedTexture2D::4421273870042003761::1717642589::1717644122::1:::
 ::res://assets/fonts/::1717644122
 PixelOperator8-Bold.ttf::FontFile::2783652848953571815::1717642589::1717644122::1::::<><>::
 PixelOperator8.ttf::FontFile::3684991186940598811::1717642589::1717644122::1::::<><>::
-::res://assets/music/::1717733664
-GEMIDAO DO WHATS APP MUSICA ELETRONICA (128kbps).mp3::AudioStreamMP3::1918713842831627101::1717733643::1717733671::1::::<><>::
+::res://assets/music/::1717734335
+GEMIDAO DO WHATS APP MUSICA ELETRONICA (128kbps).mp3::AudioStreamMP3::1918713842831627101::1717733643::1717734327::1::::<><>::
 gemido-whatsapp.mp3::AudioStreamMP3::8388292655573226833::1717642589::1717644122::1::::<><>::
 time_for_adventure.mp3::AudioStreamMP3::1189397663149360120::1717642589::1717644122::1::::<><>::
-Triângulo dançando toque da Motorola (128kbps).mp3::AudioStreamMP3::4185688718239973584::1717733614::1717733671::1::::<><>::
+Triângulo dançando toque da Motorola (128kbps).mp3::AudioStreamMP3::4185688718239973584::1717733614::1717734335::1::::<><>::
 ::res://assets/sounds/::1717644122
 coin.wav::AudioStreamWAV::3087947907338782001::1717642589::1717644122::1::::<><>::
 explosion.wav::AudioStreamWAV::5389760482704524200::1717642589::1717644122::1::::<><>::
@@ -49,27 +49,31 @@ eventBlock_.png::CompressedTexture2D::4959436203952951203::1674493288::171769936
 items_.png::CompressedTexture2D::7754271722213601960::1674493318::1717699368::1::::<><>::
 staticObjects_.png::CompressedTexture2D::647478783125463214::1674499070::1717699368::1::::<><>::
 ::res://Export/::1717642589
-::res://Scenes/::1717732945
+::res://Scenes/::1717964978
 coin.tscn::PackedScene::7592865011331083237::1717715443::0::1::::<><>::res://Scripts/coin.gd<>uid://b22oeognwg2dd::::res://assets/sprites/coin.png<>uid://bj83by20qq3c4::::res://assets/sounds/coin.wav
-game_manager.tscn::PackedScene::5705093611097665718::1717732945::0::1::::<><>::res://Scripts/game_manager.gd
+game_manager.tscn::PackedScene::5705093611097665718::1717964978::0::1::::<><>::res://Scripts/game_manager.gd
 jump_zone.tscn::PackedScene::1809783535696317641::1717642589::0::1::::<><>::
-killzone.tscn::PackedScene::6516417716175643742::1717642589::0::1::::<><>::res://Scripts/killzone.gd
-lvl1.tscn::PackedScene::7184307422681586844::1717731386::0::1::::<><>::uid://5wufcypihcaa::::res://assets/sprites/world_tileset.png<>res://Scripts/lvl1.gd<>res://Scripts/level_maneger.gd<>uid://n4gc23ecslhk::::res://Scenes/player.tscn<>uid://cy3uphtm4jrys::::res://Scenes/killzone.tscn<>uid://dggbm3jsdsdp2::::res://Scenes/coin.tscn<>uid://bafkgpds80e14::::res://Scenes/plataform.tscn<>uid://bkvtiuewy2yjl::::res://Scenes/plataforma_giradura.tscn<>uid://bhxnc4m8upecc::::res://Scenes/plataforma_giradura_gigante.tscn<>uid://c45hm3bp6ucmh::::res://Scenes/slime.tscn
-lvl2.tscn::PackedScene::3003407037244507845::1717723984::0::1::::<><>::res://Scripts/lvl1.gd<>res://Scripts/level_maneger.gd<>uid://5wufcypihcaa::::res://assets/sprites/world_tileset.png<>uid://n4gc23ecslhk::::res://Scenes/player.tscn<>uid://cy3uphtm4jrys::::res://Scenes/killzone.tscn<>uid://dggbm3jsdsdp2::::res://Scenes/coin.tscn<>uid://bafkgpds80e14::::res://Scenes/plataform.tscn<>uid://bkvtiuewy2yjl::::res://Scenes/plataforma_giradura.tscn<>uid://bhxnc4m8upecc::::res://Scenes/plataforma_giradura_gigante.tscn<>uid://c45hm3bp6ucmh::::res://Scenes/slime.tscn
-menu.tscn::PackedScene::2790449469066113089::1717732945::0::1::::<><>::res://Scripts/menu.gd
+killzone.tscn::PackedScene::6516417716175643742::1717735006::0::1::::<><>::res://Scripts/killzone.gd
+lvl1.tscn::PackedScene::7184307422681586844::1717964978::0::1::::<><>::uid://5wufcypihcaa::::res://assets/sprites/world_tileset.png<>res://Scripts/lvl1.gd<>res://Scripts/level_maneger.gd<>uid://n4gc23ecslhk::::res://Scenes/player.tscn<>uid://cy3uphtm4jrys::::res://Scenes/killzone.tscn<>uid://dggbm3jsdsdp2::::res://Scenes/coin.tscn<>uid://bafkgpds80e14::::res://Scenes/plataform.tscn<>uid://bkvtiuewy2yjl::::res://Scenes/plataforma_giradura.tscn<>uid://bhxnc4m8upecc::::res://Scenes/plataforma_giradura_gigante.tscn<>uid://c45hm3bp6ucmh::::res://Scenes/slime.tscn<>uid://gxtrikf6p1ip::::res://Scenes/slime_roxo.tscn
+lvl2.tscn::PackedScene::3003407037244507845::1717736867::0::1::::<><>::res://Scripts/lvl1.gd<>res://Scripts/level_maneger.gd<>uid://5wufcypihcaa::::res://assets/sprites/world_tileset.png<>uid://n4gc23ecslhk::::res://Scenes/player.tscn<>uid://cy3uphtm4jrys::::res://Scenes/killzone.tscn<>uid://dggbm3jsdsdp2::::res://Scenes/coin.tscn<>uid://bafkgpds80e14::::res://Scenes/plataform.tscn<>uid://bkvtiuewy2yjl::::res://Scenes/plataforma_giradura.tscn<>uid://bhxnc4m8upecc::::res://Scenes/plataforma_giradura_gigante.tscn<>uid://c45hm3bp6ucmh::::res://Scenes/slime.tscn
+menu.tscn::PackedScene::2790449469066113089::1717797330::0::1::::<><>::res://Scripts/menu.gd<>uid://b0vtxf8w7ugts::::res://assets/music/Triângulo dançando toque da Motorola (128kbps).mp3
+music2.tscn::PackedScene::5644224185651386270::1717797496::0::1::::<><>::uid://q7fg83mkaarw::::res://assets/music/time_for_adventure.mp3
 music.tscn::PackedScene::4084221272524332319::1717642589::0::1::::<><>::uid://q7fg83mkaarw::::res://assets/music/time_for_adventure.mp3
 plataform.tscn::PackedScene::2397361250502084217::1717642589::0::1::::<><>::uid://b3ml5wo1318a2::::res://assets/sprites/platforms.png
 plataforma_giradura.tscn::PackedScene::3132830019801443381::1717642589::0::1::::<><>::uid://5wufcypihcaa::::res://assets/sprites/world_tileset.png
 plataforma_giradura_gigante.tscn::PackedScene::2926017713237973550::1717642589::0::1::::<><>::uid://5wufcypihcaa::::res://assets/sprites/world_tileset.png
-player.tscn::PackedScene::972691257276675412::1717701246::0::1::::<><>::res://Scripts/player.gd<>uid://qa5n4t27af8j::::res://assets/sprites/knight.png<>uid://drrl7pnmsy7fh::::res://assets/music/gemido-whatsapp.mp3
-slime.tscn::PackedScene::6870697086909513559::1717642589::0::1::::<><>::uid://c4mqbxj7qdwd::::res://assets/sprites/slime_green.png<>res://Scripts/slime.gd<>uid://cy3uphtm4jrys::::res://Scenes/killzone.tscn
-::res://Scripts/::1717731756
+player.tscn::PackedScene::972691257276675412::1717735278::0::1::::<><>::res://Scripts/player.gd<>uid://qa5n4t27af8j::::res://assets/sprites/knight.png<>uid://drrl7pnmsy7fh::::res://assets/music/gemido-whatsapp.mp3
+menu_multiplayer.tscn::PackedScene::5554440238059281041::1718130511::0::1::::<><>::res://Scripts/menu.gd<>uid://b0vtxf8w7ugts::::res://assets/music/Triângulo dançando toque da Motorola (128kbps).mp3
+slime.tscn::PackedScene::6870697086909513559::1717964978::0::1::::<><>::uid://c4mqbxj7qdwd::::res://assets/sprites/slime_green.png<>res://Scripts/slime.gd<>uid://cy3uphtm4jrys::::res://Scenes/killzone.tscn
+slime_roxo.tscn::PackedScene::469798167434583951::1717964978::0::1::::<><>::res://Scripts/slime_roxo.gd<>uid://i828qt4e2kax::::res://assets/sprites/slime_purple.png<>uid://cy3uphtm4jrys::::res://Scenes/killzone.tscn
+::res://Scripts/::1717964425
 coin.gd::GDScript::-1::1717715432::0::1::::<>Area2D<>::
 Control.gd::GDScript::-1::1717727731::0::1::::<>Control<>::
-game_manager.gd::GDScript::-1::1717731756::0::1::::<>Node<>::
-killzone.gd::GDScript::-1::1717699888::0::1::::<>Area2D<>::
-level_maneger.gd::GDScript::-1::1717716981::0::1::::<>Node<>::
-lvl1.gd::GDScript::-1::1717725992::0::1::::<>Node2D<>::
-menu.gd::GDScript::-1::1717731514::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1717701246::0::1::::<>CharacterBody2D<>::
-slime.gd::GDScript::-1::1717642589::0::1::::<>Node2D<>::
+game_manager.gd::GDScript::-1::1717799468::0::1::::<>Node<>::
+killzone.gd::GDScript::-1::1717769100::0::1::::<>Area2D<>::
+level_maneger.gd::GDScript::-1::1717769341::0::1::::<>Node<>::
+lvl1.gd::GDScript::-1::1717964425::0::1::::<>Node2D<>::
+menu.gd::GDScript::-1::1717737840::0::1::::<>Node2D<>::
+player.gd::GDScript::-1::1717737529::0::1::::<>CharacterBody2D<>::
+slime.gd::GDScript::-1::1717799327::0::1::::<>Node2D<>::
+slime_roxo.gd::GDScript::-1::1717799330::0::1::::<>Node2D<>::

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://n4gc23ecslhk"]
+[gd_scene load_steps=32 format=3 uid="uid://n4gc23ecslhk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_lowoy"]
 [ext_resource type="Texture2D" uid="uid://qa5n4t27af8j" path="res://assets/sprites/knight.png" id="1_sccve"]
@@ -205,6 +205,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_877eh"]
 radius = 5.0
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vqnou"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_lowoy")
@@ -222,3 +227,6 @@ shape = SubResource("CircleShape2D_877eh")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_63egc")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_vqnou")

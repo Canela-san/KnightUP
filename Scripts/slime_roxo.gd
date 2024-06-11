@@ -1,6 +1,6 @@
 extends Node2D
 
-var speed = 60 * randf_range(0.8, 2)
+var speed = 60 * 3
 var direction = randi_range(0, 2) * 2 - 1
 
 @onready var animated_sprite = $AnimatedSprite2D
