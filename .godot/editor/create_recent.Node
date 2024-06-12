@@ -1,11 +1,14 @@
 MultiplayerSynchronizer
 MultiplayerSpawner
-AudioStreamPlayer2D
+Node2D
+StaticBody2D
 Node
+AnimationTree
+Camera2D
+AudioStreamPlayer2D
 Button
 MarginContainer
 VBoxContainer
 Label
 ColorRect
-StaticBody2D
 CollisionShape2D

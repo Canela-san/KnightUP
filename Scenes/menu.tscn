@@ -1,6 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf0ykbdi8onnt"]
+[gd_scene load_steps=12 format=3 uid="uid://bf0ykbdi8onnt"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_fr54h"]
+
+[sub_resource type="SystemFont" id="SystemFont_qq6bf"]
+font_names = PackedStringArray("ComicShannsMono Nerd Font")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_c4c2b"]
+font_names = PackedStringArray("ComicShannsMono Nerd Font")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5as1e"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqsqm"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frop6"]
+bg_color = Color(0, 0, 0, 0.686275)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="SystemFont" id="SystemFont_22y4j"]
 font_names = PackedStringArray("ComicShannsMono Nerd Font")
@@ -39,7 +68,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.14902, 0.196078, 0.254902, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="multiplayer_menu" type="MarginContainer" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_constants/margin_left = 100
@@ -47,10 +76,85 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="multiplayer_menu"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="multiplayer_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_qq6bf")
+theme_override_font_sizes/font_size = 86
+text = "Knight UP!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="multiplayer_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="multiplayer_menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Join" type="Button" parent="multiplayer_menu/VBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = SubResource("SystemFont_c4c2b")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_5as1e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jqsqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frop6")
+text = "Join"
+
+[node name="MarginContainer2" type="MarginContainer" parent="multiplayer_menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Host" type="Button" parent="multiplayer_menu/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = SubResource("SystemFont_c4c2b")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_5as1e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jqsqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frop6")
+text = "Host"
+
+[node name="MarginContainer3" type="MarginContainer" parent="multiplayer_menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Back" type="Button" parent="multiplayer_menu/VBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = SubResource("SystemFont_c4c2b")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_5as1e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jqsqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frop6")
+text = "Back"
+
+[node name="main_menu" type="MarginContainer" parent="."]
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 1052.0
+offset_bottom = 601.0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_22y4j")
@@ -59,18 +163,18 @@ text = "Knight UP!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="main_menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+[node name="Start" type="Button" parent="main_menu/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("SystemFont_y4db1")
@@ -80,13 +184,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mkjjp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
 text = "Start"
 
-[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="main_menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Multiplayer" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+[node name="Multiplayer" type="Button" parent="main_menu/VBoxContainer/VBoxContainer/MarginContainer4"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("SystemFont_y4db1")
@@ -97,13 +201,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
 text = "Multiplayer
 "
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="main_menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="Options" type="Button" parent="main_menu/VBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("SystemFont_y4db1")
@@ -114,13 +218,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
 text = "Options
 "
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="main_menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+[node name="Quit" type="Button" parent="main_menu/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("SystemFont_y4db1")
@@ -130,7 +234,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mkjjp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_eds08")
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/Multiplayer" to="." method="_on_multiplayer_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="multiplayer_menu/VBoxContainer/VBoxContainer/MarginContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="multiplayer_menu/VBoxContainer/VBoxContainer/MarginContainer2/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="multiplayer_menu/VBoxContainer/VBoxContainer/MarginContainer3/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/VBoxContainer/MarginContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/VBoxContainer/MarginContainer4/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/VBoxContainer/MarginContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_pressed"]

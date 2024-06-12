@@ -1,22 +1,35 @@
 extends Node2D
 signal Start
-signal Menu_Multiplayer
-signal Options
-signal Quit
+signal Join
+signal Host
+@onready var multiplayer_menu = $multiplayer_menu
+@onready var main_menu = $main_menu
+
+
+func _ready():
+	multiplayer_menu.hide()
 #Start Button
 func _on_start_pressed():
 	emit_signal("Start")
 #Options
 
 func _on_multiplayer_pressed():
-	emit_signal("Menu_Multiplayer")
+	multiplayer_menu.show()
+	main_menu.hide()
 
 func _on_options_pressed():
-	emit_signal("Options")
-
+	pass
+	
 #Quit Button
 func _on_quit_pressed():
-	emit_signal("Quit")
+	get_tree().quit()
 
+func _on_join_pressed():
+	emit_signal("Join")
 
+func _on_host_pressed():
+	emit_signal("Start")
 
+func _on_back_pressed():
+	main_menu.show()
+	multiplayer_menu.hide()

@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnjub8lp2gqla"]
+[gd_scene load_steps=7 format=3 uid="uid://cnjub8lp2gqla"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_2itnn"]
+[ext_resource type="PackedScene" uid="uid://n4gc23ecslhk" path="res://Scenes/player.tscn" id="2_svggp"]
+[ext_resource type="PackedScene" uid="uid://bygor67uypnwh" path="res://Scenes/music_game.tscn" id="3_txke4"]
+[ext_resource type="PackedScene" uid="uid://dcdk24mlqqnur" path="res://Scenes/Music_Menu.tscn" id="4_dt72b"]
+[ext_resource type="PackedScene" uid="uid://cmodsvfbrvpf7" path="res://Scenes/music_game2.tscn" id="4_usvxs"]
+[ext_resource type="PackedScene" uid="uid://bf0ykbdi8onnt" path="res://Scenes/menu.tscn" id="5_wbjpy"]
 
 [node name="Game Manager" type="Node"]
 script = ExtResource("1_2itnn")
+player_scene = ExtResource("2_svggp")
+
+[node name="Music Manager" type="Node" parent="."]
+
+[node name="Music_game2" parent="Music Manager" instance=ExtResource("4_usvxs")]
+autoplay = false
+
+[node name="Music_game" parent="Music Manager" instance=ExtResource("3_txke4")]
+autoplay = false
+
+[node name="Music Menu" parent="Music Manager" instance=ExtResource("4_dt72b")]
+
+[node name="Menu" parent="." instance=ExtResource("5_wbjpy")]
+
+[connection signal="Host" from="Menu" to="." method="_on_menu_host"]
+[connection signal="Join" from="Menu" to="." method="_on_menu_join"]
+[connection signal="Start" from="Menu" to="." method="_on_menu_start"]

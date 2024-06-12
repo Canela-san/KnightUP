@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://q7fg83mkaarw" path="res://assets/music/time_for_adventure.mp3" id="1_awsji"]
 
-[node name="Music" type="AudioStreamPlayer2D"]
+[node name="Music_game2" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_awsji")
 volume_db = -4.667
 autoplay = true

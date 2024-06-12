@@ -1,77 +1,46 @@
 extends Node
-
+const SERVER_PORT = 12345
+const SERVER_IP = "192.168.15.42"
+#const SERVER_IP = "127.0.0.1"
 const lvlQuant = 2
 var new_level_path = 0
 var game_state = {"score": 0}
-var level = 0
+var current_level = 1
 var coin = 0
+var PlayerPath = "res://Scenes/player.tscn"
 
+@onready var music_menu = $"Music Manager/Music Menu"
+@onready var music_game = $"Music Manager/Music_game"
+@onready var menu = $Menu
+
+var peer = ENetMultiplayerPeer.new()
+@export var player_scene: PackedScene
 
 
 func _ready():
-	Menu()
-	Music_Menu()
+	music_menu.play()
 
-func Menu():
-	var menu = ResourceLoader.load("res://Scenes/menu.tscn")
-	if menu:
-		var Imenu = menu.instantiate()
-		add_child(Imenu)
-		Imenu.name = "menu"
-		if Imenu.has_method("initialize"):
-			Imenu.initialize(game_state)
-		Imenu.connect("Start", self._on_control_start)
-		Imenu.connect("Menu_Multiplayer", self.Menu_Multiplayer)
-		Imenu.connect("Options", self._on_control_options)
-		Imenu.connect("Quit", self._on_control_quit)
-
-func Menu_Multiplayer():
-	var menu_Multipleyer = ResourceLoader.load("res://Scenes/menu_multiplayer.tscn")
-	if menu_Multipleyer:
-		var Imenu_Multipleyer = menu_Multipleyer.instantiate()
-		add_child(Imenu_Multipleyer)
-		Imenu_Multipleyer.name = "menu_Multipleyer"
-		if Imenu_Multipleyer.has_method("initialize"):
-			Imenu_Multipleyer.initialize(game_state)
-		Imenu_Multipleyer.connect("Join_Multiplayer", self._on_Multiplayer_Join_Multiplayer)
-		Imenu_Multipleyer.connect("Host_Multiplayer", self._on_Multiplayer_Host_Multiplayer)
-
-func Music_Game():
-	var path = ResourceLoader.load("res://Scenes/music2.tscn")
-	if path:
-		if !has_node("music"):
-			var music = path.instantiate()
-			add_child(music)
-			music.name = "music"
-			if music.has_method("initialize"):
-				music.initialize(game_state)
-			music.play()
-
-func Music_Menu():
-	var path = ResourceLoader.load("res://Scenes/Music_Menu.tscn")
-	if path:
-		if !has_node("Music_Menu"):
-			var music = path.instantiate()
-			add_child(music)
-			music.name = "Music_Menu"
-			if music.has_method("initialize"):
-				music.initialize(game_state)
-			music.play()
-
-func NextLevel():
-	if level < lvlQuant:
-		level += 1
-	new_level_path = "res://Scenes/lvl"+ str(level) +".tscn"
+func getLevelPath(level):
+	return "res://Scenes/lvl"+ str(level) +".tscn"
 	
-	# Remove o nível atual
+func _process(_delta):
+	if Input.is_action_just_pressed("menu"):
+		menu.show()
+		if has_node("Current_Level"):
+			get_node("Current_Level").queue_free()
+		if has_node("Current_Level2"):
+			get_node("Current_Level2").queue_free()
+
+
+func LoadLevel(level):
+
 	if has_node("Current_Level"):
 		get_node("Current_Level").queue_free()
 	if has_node("Current_Level2"):
 		get_node("Current_Level2").queue_free()
-		# Espera até que o nó seja realmente removido
-			#await get_tree().process_frame
+		
 	# Carrega o novo nível
-	var new_level_resource = ResourceLoader.load(new_level_path)
+	var new_level_resource = ResourceLoader.load(getLevelPath(level))
 	if new_level_resource:
 		var new_level = new_level_resource.instantiate()
 		add_child(new_level)
@@ -80,41 +49,57 @@ func NextLevel():
 			new_level.initialize(game_state)
 		new_level.connect("AddPoint", self._on_lvl_1_add_point)
 		new_level.connect("Reset_Level", self.reset_level)
-	else:
-		pass
+		
+func create_player():
+	if has_node("Player"):
+		get_node("Player").queue_free()
+		
+	# Carrega o novo nível
+	var new_player = ResourceLoader.load(PlayerPath)
+	if new_player:
+		var player = new_player.instantiate()
+		add_child(player)
+		player.name = "Player"
+		if player.has_method("initialize"):
+			player.initialize()
 
 func _on_lvl_1_add_point():
 	game_state["score"] += 1
 	print(game_state["score"])
 	if game_state["score"] == coin:
-		NextLevel()
+		LoadLevel(++current_level)
 		
 func reset_level():
 	Engine.time_scale = 1
-	level -= 1
-	NextLevel()
+	#LoadLevel(current_level)
+	
 
-func _on_control_start():
-	$menu.queue_free()
-	$Music_Menu.queue_free()
-	Music_Game()
-	NextLevel()
+func _on_menu_start():
+	music_menu.stop()
+	music_game.play()
+	menu.hide()
+	LoadLevel(current_level)
+	create_player()
 
-func _on_control_options():
+func _on_menu_join():
+	peer.create_client(SERVER_IP, SERVER_PORT)
+	multiplayer.multiplayer_peer = peer
+	print("conecting !")
+
+func _on_menu_host():
+	peer.create_server(SERVER_PORT)
+	multiplayer.multiplayer_peer = peer
+	multiplayer.peer_connected.connect(_add_player)
+	multiplayer.peer_connected.disconnect(_del_player)
+	_on_menu_start()
+	print("hosting !")
+	#_add_player()
+
+func _add_player(id: int):
+	print("player %s joined" % id)
+	var player = player_scene.instantiate()
+	player.name = str(id)
+	call_deferred("add_child",player)
+
+func _del_player(_id: int):
 	pass
-
-func _on_control_quit():
-	get_tree().quit()
-	
-func _on_Multiplayer_Join_Multiplayer():
-	#var peer = ENetMultiplayerPeer.new()
-	pass
-	
-func _on_Multiplayer_Host_Multiplayer():
-	#var peer = ENetMultiplayerPeer.new()
-	
-	$menu.queue_free()
-	$Music_Menu.queue_free()
-	Music_Game()
-	NextLevel()
-	$Current_Level.Multiplayer_Host()

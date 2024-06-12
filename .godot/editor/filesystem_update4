@@ -1,14 +1,1 @@
-res://Scenes/menu.tscn
-res://Scenes/menu_multiplayer.tscn
-res://Scripts/menu.gd
-res://Scripts/game_manager.gd
-res://Scripts/menu_multiplayer.gd
-res://Scenes/lvl1.tscn
-res://Scenes/game_manager.tscn
-res://Scenes/slime.tscn
-res://Scenes/slime_roxo.tscn
-res://Scenes/music.tscn
-res://Scenes/Music_Menu.tscn
-res://Scripts/lvl1.gd
-res://Scenes/player.tscn
 res://Scripts/player.gd
