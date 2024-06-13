@@ -1,6 +1,7 @@
 extends Node
 const SERVER_PORT:int = 12345
-const SERVER_IP:String = "192.168.15.42"
+#const SERVER_IP:String = "192.168.15.42"
+const SERVER_IP:String = "127.0.0.1"
 const lvlQuant:int = 2
 const PlayerPath:String = "res://Scenes/player_solo.tscn"
 
