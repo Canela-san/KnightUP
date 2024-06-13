@@ -11,15 +11,25 @@
 script = ExtResource("1_2itnn")
 player_scene = ExtResource("2_svggp")
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scenes/player.tscn")
+spawn_path = NodePath("../Players")
+spawn_limit = 2
+
 [node name="Music Manager" type="Node" parent="."]
 
 [node name="Music_game2" parent="Music Manager" instance=ExtResource("4_usvxs")]
+volume_db = -80.0
 autoplay = false
 
 [node name="Music_game" parent="Music Manager" instance=ExtResource("3_txke4")]
+volume_db = -80.0
 autoplay = false
 
 [node name="Music Menu" parent="Music Manager" instance=ExtResource("4_dt72b")]
+volume_db = -80.0
+
+[node name="Players" type="Node" parent="."]
 
 [node name="Menu" parent="." instance=ExtResource("5_wbjpy")]
 

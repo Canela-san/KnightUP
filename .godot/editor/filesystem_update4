@@ -1,1 +1,12 @@
+res://Scenes/game_manager.tscn
+res://lvl1.tres
+res://Scenes/player.tscn
+res://Scenes/lvl1.tscn
+res://Scenes/menu.tscn
+res://Scripts/game_manager.gd
 res://Scripts/player.gd
+res://Scripts/menu.gd
+res://menu.tres
+res://Scenes/player_solo.tscn
+res://Scenes/Multiplayer_player.gd
+res://Scenes/MultiplayerSynchronizer.gd

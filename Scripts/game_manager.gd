@@ -1,13 +1,15 @@
 extends Node
-const SERVER_PORT = 12345
-const SERVER_IP = "192.168.15.42"
-#const SERVER_IP = "127.0.0.1"
-const lvlQuant = 2
-var new_level_path = 0
-var game_state = {"score": 0}
-var current_level = 1
-var coin = 0
-var PlayerPath = "res://Scenes/player.tscn"
+const SERVER_PORT:int = 12345
+const SERVER_IP:String = "192.168.15.42"
+const lvlQuant:int = 2
+const PlayerPath:String = "res://Scenes/player_solo.tscn"
+
+var new_level_path:String = ""
+var game_state:Dictionary = {"score": 0}
+var current_level:int = 1
+var coin:int = 0
+var _player_spawn_node:Node
+
 
 @onready var music_menu = $"Music Manager/Music Menu"
 @onready var music_game = $"Music Manager/Music_game"
@@ -19,6 +21,7 @@ var peer = ENetMultiplayerPeer.new()
 
 func _ready():
 	music_menu.play()
+	
 
 func getLevelPath(level):
 	return "res://Scenes/lvl"+ str(level) +".tscn"
@@ -30,7 +33,6 @@ func _process(_delta):
 			get_node("Current_Level").queue_free()
 		if has_node("Current_Level2"):
 			get_node("Current_Level2").queue_free()
-
 
 func LoadLevel(level):
 
@@ -72,34 +74,40 @@ func _on_lvl_1_add_point():
 func reset_level():
 	Engine.time_scale = 1
 	#LoadLevel(current_level)
-	
 
-func _on_menu_start():
+func _on_menu_start(is_multiplayer:bool = 0):
 	music_menu.stop()
 	music_game.play()
 	menu.hide()
 	LoadLevel(current_level)
-	create_player()
+	if !is_multiplayer:
+		create_player()
 
 func _on_menu_join():
+	_on_menu_start(1)
 	peer.create_client(SERVER_IP, SERVER_PORT)
 	multiplayer.multiplayer_peer = peer
 	print("conecting !")
 
 func _on_menu_host():
+	_on_menu_start(1)
+	_player_spawn_node = get_tree().get_current_scene().get_node("Players")
 	peer.create_server(SERVER_PORT)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_add_player)
-	multiplayer.peer_connected.disconnect(_del_player)
-	_on_menu_start()
+	multiplayer.peer_disconnected.connect(_del_player)
 	print("hosting !")
-	#_add_player()
+	_add_player()
 
-func _add_player(id: int):
-	print("player %s joined" % id)
+func _add_player(id: int = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
-	call_deferred("add_child",player)
+	player.player_id = id
+	#call_deferred("add_child",player)
+	_player_spawn_node.add_child(player, true)
+	print("player %s joined" % id)
 
-func _del_player(_id: int):
-	pass
+func _del_player(id: int):
+	print("player %s left the game" % id)
+	if _player_spawn_node.has_node(str(id)):
+		_player_spawn_node.get_node(str(id)).queue_free()

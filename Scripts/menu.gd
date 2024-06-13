@@ -8,10 +8,9 @@ signal Host
 
 func _ready():
 	multiplayer_menu.hide()
-#Start Button
+	
 func _on_start_pressed():
 	emit_signal("Start")
-#Options
 
 func _on_multiplayer_pressed():
 	multiplayer_menu.show()
@@ -19,8 +18,7 @@ func _on_multiplayer_pressed():
 
 func _on_options_pressed():
 	pass
-	
-#Quit Button
+
 func _on_quit_pressed():
 	get_tree().quit()
 
@@ -28,7 +26,7 @@ func _on_join_pressed():
 	emit_signal("Join")
 
 func _on_host_pressed():
-	emit_signal("Start")
+	emit_signal("Host")
 
 func _on_back_pressed():
 	main_menu.show()

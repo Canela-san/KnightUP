@@ -1,10 +1,10 @@
 MultiplayerSynchronizer
+Node
 MultiplayerSpawner
+Camera2D
 Node2D
 StaticBody2D
-Node
 AnimationTree
-Camera2D
 AudioStreamPlayer2D
 Button
 MarginContainer
