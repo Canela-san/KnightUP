@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/lvl1.gd" id="1_viyrr"]
 [ext_resource type="Script" path="res://Scripts/level_maneger.gd" id="2_e0vbu"]
 [ext_resource type="Texture2D" uid="uid://5wufcypihcaa" path="res://assets/sprites/world_tileset.png" id="3_g26vo"]
-[ext_resource type="PackedScene" uid="uid://n4gc23ecslhk" path="res://Scenes/player.tscn" id="4_hlonm"]
+[ext_resource type="PackedScene" uid="uid://n4gc23ecslhk" path="res://Scenes/player_Multiplayer.tscn" id="4_hlonm"]
 [ext_resource type="PackedScene" uid="uid://cy3uphtm4jrys" path="res://Scenes/killzone.tscn" id="5_y87rf"]
 [ext_resource type="PackedScene" uid="uid://dggbm3jsdsdp2" path="res://Scenes/coin.tscn" id="6_v8ia7"]
 [ext_resource type="PackedScene" uid="uid://bafkgpds80e14" path="res://Scenes/plataform.tscn" id="7_tygpy"]

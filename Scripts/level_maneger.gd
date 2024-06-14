@@ -13,3 +13,5 @@ func _process(_delta):
 	if Input.is_action_just_pressed("reset"):
 		emit_signal("Reset")
 
+func death():
+	emit_signal("Reset")

@@ -1,19 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://n4gc23ecslhk"]
+[gd_scene load_steps=32 format=3 uid="uid://dygcpteos0hpr"]
 
-[ext_resource type="Script" path="res://Scenes/Multiplayer_player.gd" id="1_34u80"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_lowoy"]
 [ext_resource type="Texture2D" uid="uid://qa5n4t27af8j" path="res://assets/sprites/knight.png" id="1_sccve"]
-[ext_resource type="Script" path="res://Scenes/MultiplayerSynchronizer.gd" id="2_0flla"]
 [ext_resource type="AudioStream" uid="uid://drrl7pnmsy7fh" path="res://assets/music/gemido-whatsapp.mp3" id="3_63egc"]
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ibwtv"]
-properties/0/path = NodePath("..:player_id")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ub306"]
-properties/0/path = NodePath("InputSynchronizer:input_direction")
-properties/0/spawn = true
-properties/0/replication_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78yhj"]
 atlas = ExtResource("1_sccve")
@@ -216,18 +205,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_877eh"]
 radius = 5.0
 
-[node name="Multiplayer Player" type="CharacterBody2D"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sg6u4"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_34u80")
-
-[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-root_path = NodePath("../InputSynchronizer")
-replication_config = SubResource("SceneReplicationConfig_ibwtv")
-
-[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="."]
-unique_name_in_owner = true
-replication_config = SubResource("SceneReplicationConfig_ub306")
-script = ExtResource("2_0flla")
+script = ExtResource("1_lowoy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
@@ -249,3 +240,6 @@ zoom = Vector2(4, 4)
 limit_bottom = 57
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_sg6u4")

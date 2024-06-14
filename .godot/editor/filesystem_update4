@@ -1,12 +1,16 @@
 res://Scenes/game_manager.tscn
+res://menu.tres
 res://lvl1.tres
 res://Scenes/player.tscn
 res://Scenes/lvl1.tscn
-res://Scenes/menu.tscn
+res://Scripts/slime_roxo.gd
+res://Scenes/slime.tscn
+res://Scripts/level_maneger.gd
+res://Scenes/killzone.tscn
+res://Scripts/killzone.gd
 res://Scripts/game_manager.gd
-res://Scripts/player.gd
-res://Scripts/menu.gd
-res://menu.tres
-res://Scenes/player_solo.tscn
-res://Scenes/Multiplayer_player.gd
-res://Scenes/MultiplayerSynchronizer.gd
+res://Scripts/lvl1.gd
+res://Scenes/slime_roxo.tscn
+res://Scenes/menu.tscn
+res://Scenes/Win Window.tscn
+res://Scenes/plataform.tscn

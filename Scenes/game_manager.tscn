@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnjub8lp2gqla"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_2itnn"]
-[ext_resource type="PackedScene" uid="uid://n4gc23ecslhk" path="res://Scenes/player.tscn" id="2_svggp"]
+[ext_resource type="PackedScene" uid="uid://dygcpteos0hpr" path="res://Scenes/player.tscn" id="2_svggp"]
 [ext_resource type="PackedScene" uid="uid://bygor67uypnwh" path="res://Scenes/music_game.tscn" id="3_txke4"]
 [ext_resource type="PackedScene" uid="uid://dcdk24mlqqnur" path="res://Scenes/Music_Menu.tscn" id="4_dt72b"]
 [ext_resource type="PackedScene" uid="uid://cmodsvfbrvpf7" path="res://Scenes/music_game2.tscn" id="4_usvxs"]
@@ -14,7 +14,7 @@ player_scene = ExtResource("2_svggp")
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Scenes/player.tscn")
 spawn_path = NodePath("../Players")
-spawn_limit = 2
+spawn_limit = 3
 
 [node name="Music Manager" type="Node" parent="."]
 
@@ -32,6 +32,8 @@ volume_db = -80.0
 [node name="Players" type="Node" parent="."]
 
 [node name="Menu" parent="." instance=ExtResource("5_wbjpy")]
+
+[node name="Map" type="Node" parent="."]
 
 [connection signal="Host" from="Menu" to="." method="_on_menu_host"]
 [connection signal="Join" from="Menu" to="." method="_on_menu_join"]

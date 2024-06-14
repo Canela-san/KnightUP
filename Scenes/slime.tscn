@@ -66,11 +66,11 @@ position = Vector2(0, 6)
 target_position = Vector2(-9, 0)
 
 [node name="RayCastDownLeft" type="RayCast2D" parent="."]
-position = Vector2(-15, 0)
-target_position = Vector2(0, 20)
+position = Vector2(-8, 0)
+target_position = Vector2(0, 18)
 
 [node name="RayCastDownRight" type="RayCast2D" parent="."]
-position = Vector2(15, 0)
-target_position = Vector2(0, 20)
+position = Vector2(8, 0)
+target_position = Vector2(0, 18)
 
 [connection signal="death" from="killzone" to="." method="_on_killzone_death"]

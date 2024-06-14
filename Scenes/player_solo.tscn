@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://cl40aahecjxmj"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_le6pl"]
+[ext_resource type="Script" path="res://Scenes/player_solo.gd" id="1_22ud1"]
 [ext_resource type="Texture2D" uid="uid://qa5n4t27af8j" path="res://assets/sprites/knight.png" id="2_mxof7"]
 [ext_resource type="AudioStream" uid="uid://drrl7pnmsy7fh" path="res://assets/music/gemido-whatsapp.mp3" id="3_pr01g"]
 
@@ -207,7 +207,7 @@ radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_le6pl")
+script = ExtResource("1_22ud1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
